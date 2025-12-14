@@ -5,7 +5,7 @@
 
 ## Overview
 
-Project FELINA is a comprehensive data engineering response to the "Seismic Reckoning." It involves recovering decades of seismic data from disparate legacy systems, modeling it into an immutable Data Vault, transforming it into actionable analytics, and serving it via a robust orchestration platform.
+The project is a comprehensive data engineering response to the "Seismic Reckoning." It involves recovering decades of seismic data from disparate legacy systems, modeling it into an immutable Data Vault, transforming it into actionable analytics, and serving it via a robust orchestration platform.
 
 This repository contains the code for all four tracks of the challenge:
 1.  **Forensics**: Recovering corrupted Parquet files and decoding ghost formats (.sgx).
