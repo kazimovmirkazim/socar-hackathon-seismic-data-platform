@@ -1,0 +1,85 @@
+[2025-12-13T21:53:33.616+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T21:53:33.647+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: seismic_data_etl.ingest_data_vault scheduled__2025-12-12T00:00:00+00:00 [queued]>
+[2025-12-13T21:53:33.655+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: seismic_data_etl.ingest_data_vault scheduled__2025-12-12T00:00:00+00:00 [queued]>
+[2025-12-13T21:53:33.656+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-12-13T21:53:33.675+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): ingest_data_vault> on 2025-12-12 00:00:00+00:00
+[2025-12-13T21:53:33.684+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=173) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-13T21:53:33.683+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'seismic_data_etl', 'ingest_data_vault', 'scheduled__2025-12-12T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/seismic_data_pipeline.py', '--cfg-path', '/tmp/tmpwoo0tukx']
+[2025-12-13T21:53:33.686+0000] {standard_task_runner.py:63} INFO - Started process 174 to run task
+[2025-12-13T21:53:33.686+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask ingest_data_vault
+[2025-12-13T21:53:33.704+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-13T21:53:33.741+0000] {task_command.py:426} INFO - Running <TaskInstance: seismic_data_etl.ingest_data_vault scheduled__2025-12-12T00:00:00+00:00 [running]> on host ce0c821d1b17
+[2025-12-13T21:53:33.836+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='seismic_data_etl' AIRFLOW_CTX_TASK_ID='ingest_data_vault' AIRFLOW_CTX_EXECUTION_DATE='2025-12-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-12T00:00:00+00:00'
+[2025-12-13T21:53:33.837+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T21:53:33.870+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T21:53:33.872+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project_root && python data_vault_builder.py']
+[2025-12-13T21:53:33.882+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T21:53:38.552+0000] {subprocess.py:93} INFO - Data Vault Builder initialized. Output directory: data_vault
+[2025-12-13T21:53:38.553+0000] {subprocess.py:93} INFO - Ingesting Masters...
+[2025-12-13T21:53:38.553+0000] {subprocess.py:93} INFO - Saved hub_well with 20 rows (or appended/updated).
+[2025-12-13T21:53:38.554+0000] {subprocess.py:93} INFO - Saved sat_well_details with 20 rows (or appended/updated).
+[2025-12-13T21:53:38.554+0000] {subprocess.py:93} INFO - Saved hub_survey with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.554+0000] {subprocess.py:93} INFO - Saved sat_survey_details with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.555+0000] {subprocess.py:93} INFO - Saved hub_sensor with 50 rows (or appended/updated).
+[2025-12-13T21:53:38.555+0000] {subprocess.py:93} INFO - Saved sat_sensor_details with 50 rows (or appended/updated).
+[2025-12-13T21:53:38.556+0000] {subprocess.py:93} INFO - Ingesting Archive Batches...
+[2025-12-13T21:53:38.556+0000] {subprocess.py:93} INFO - Skipping corrupted file: ./track_1_forensics/archive_batch_seismic_readings.parquet
+[2025-12-13T21:53:38.557+0000] {subprocess.py:93} INFO - Processing archive_batch_seismic_readings_2.parquet with 4570 rows.
+[2025-12-13T21:53:38.557+0000] {subprocess.py:93} INFO - Saved hub_well with 13 rows (or appended/updated).
+[2025-12-13T21:53:38.558+0000] {subprocess.py:93} INFO - Saved hub_survey with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.558+0000] {subprocess.py:93} INFO - Saved hub_sensor with 20 rows (or appended/updated).
+[2025-12-13T21:53:38.559+0000] {subprocess.py:93} INFO - Saved link_seismic_trace with 32 rows (or appended/updated).
+[2025-12-13T21:53:38.559+0000] {subprocess.py:93} INFO - Saved sat_seismic_reading with 4570 rows (or appended/updated).
+[2025-12-13T21:53:38.559+0000] {subprocess.py:93} INFO - Ingesting Legacy Surveys...
+[2025-12-13T21:53:38.560+0000] {subprocess.py:93} INFO - Processing legacy_survey_1991_101.parquet (Year: 1991) with 166 rows.
+[2025-12-13T21:53:38.560+0000] {subprocess.py:93} INFO - Saved hub_well with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.561+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.561+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.562+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 166 rows (or appended/updated).
+[2025-12-13T21:53:38.562+0000] {subprocess.py:93} INFO - Processing legacy_survey_1991_102.parquet (Year: 1991) with 166 rows.
+[2025-12-13T21:53:38.562+0000] {subprocess.py:93} INFO - Saved hub_well with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.563+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.563+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.564+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 166 rows (or appended/updated).
+[2025-12-13T21:53:38.564+0000] {subprocess.py:93} INFO - Processing legacy_survey_1991_205.parquet (Year: 1991) with 166 rows.
+[2025-12-13T21:53:38.564+0000] {subprocess.py:93} INFO - Saved hub_well with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.565+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.565+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.566+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 166 rows (or appended/updated).
+[2025-12-13T21:53:38.566+0000] {subprocess.py:93} INFO - Processing legacy_survey_1992_205.parquet (Year: 1992) with 250 rows.
+[2025-12-13T21:53:38.566+0000] {subprocess.py:93} INFO - Saved hub_well with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.567+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.567+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.567+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 250 rows (or appended/updated).
+[2025-12-13T21:53:38.568+0000] {subprocess.py:93} INFO - Processing legacy_survey_1993_101.parquet (Year: 1993) with 666 rows.
+[2025-12-13T21:53:38.568+0000] {subprocess.py:93} INFO - Saved hub_well with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.569+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.569+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.569+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 666 rows (or appended/updated).
+[2025-12-13T21:53:38.570+0000] {subprocess.py:93} INFO - Processing legacy_survey_1993_205.parquet (Year: 1993) with 582 rows.
+[2025-12-13T21:53:38.570+0000] {subprocess.py:93} INFO - Saved hub_well with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.571+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.571+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.572+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 582 rows (or appended/updated).
+[2025-12-13T21:53:38.572+0000] {subprocess.py:93} INFO - Processing legacy_survey_1994_101.parquet (Year: 1994) with 166 rows.
+[2025-12-13T21:53:38.573+0000] {subprocess.py:93} INFO - Saved hub_well with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.573+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.574+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.574+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 166 rows (or appended/updated).
+[2025-12-13T21:53:38.575+0000] {subprocess.py:93} INFO - Processing legacy_survey_1994_102.parquet (Year: 1994) with 832 rows.
+[2025-12-13T21:53:38.575+0000] {subprocess.py:93} INFO - Saved hub_well with 4 rows (or appended/updated).
+[2025-12-13T21:53:38.576+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.576+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 4 rows (or appended/updated).
+[2025-12-13T21:53:38.577+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 832 rows (or appended/updated).
+[2025-12-13T21:53:38.577+0000] {subprocess.py:93} INFO - Processing legacy_survey_1994_205.parquet (Year: 1994) with 666 rows.
+[2025-12-13T21:53:38.578+0000] {subprocess.py:93} INFO - Saved hub_well with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.578+0000] {subprocess.py:93} INFO - Saved hub_survey with 1 rows (or appended/updated).
+[2025-12-13T21:53:38.578+0000] {subprocess.py:93} INFO - Saved link_legacy_trace with 3 rows (or appended/updated).
+[2025-12-13T21:53:38.579+0000] {subprocess.py:93} INFO - Saved sat_legacy_reading with 666 rows (or appended/updated).
+[2025-12-13T21:53:38.579+0000] {subprocess.py:93} INFO - Ingestion Complete.
+[2025-12-13T21:53:38.628+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-13T21:53:38.629+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T21:53:38.660+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=seismic_data_etl, task_id=ingest_data_vault, execution_date=20251212T000000, start_date=20251213T215333, end_date=20251213T215338
+[2025-12-13T21:53:38.678+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-13T21:53:38.698+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-13T21:53:38.702+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

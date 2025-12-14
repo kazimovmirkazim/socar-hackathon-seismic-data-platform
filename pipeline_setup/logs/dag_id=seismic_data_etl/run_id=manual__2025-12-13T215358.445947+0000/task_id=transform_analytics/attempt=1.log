@@ -1,0 +1,47 @@
+[2025-12-13T21:54:03.498+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T21:54:03.533+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: seismic_data_etl.transform_analytics manual__2025-12-13T21:53:58.445947+00:00 [queued]>
+[2025-12-13T21:54:03.542+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: seismic_data_etl.transform_analytics manual__2025-12-13T21:53:58.445947+00:00 [queued]>
+[2025-12-13T21:54:03.543+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-12-13T21:54:03.559+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): transform_analytics> on 2025-12-13 21:53:58.445947+00:00
+[2025-12-13T21:54:03.565+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=333) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-13T21:54:03.567+0000] {standard_task_runner.py:63} INFO - Started process 334 to run task
+[2025-12-13T21:54:03.565+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'seismic_data_etl', 'transform_analytics', 'manual__2025-12-13T21:53:58.445947+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/seismic_data_pipeline.py', '--cfg-path', '/tmp/tmpp492_umi']
+[2025-12-13T21:54:03.568+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask transform_analytics
+[2025-12-13T21:54:03.584+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-13T21:54:03.620+0000] {task_command.py:426} INFO - Running <TaskInstance: seismic_data_etl.transform_analytics manual__2025-12-13T21:53:58.445947+00:00 [running]> on host ce0c821d1b17
+[2025-12-13T21:54:03.716+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='seismic_data_etl' AIRFLOW_CTX_TASK_ID='transform_analytics' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T21:53:58.445947+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-13T21:53:58.445947+00:00'
+[2025-12-13T21:54:03.717+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T21:54:03.733+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T21:54:03.735+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project_root && python analytics_etl.py']
+[2025-12-13T21:54:03.743+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T21:54:05.196+0000] {subprocess.py:93} INFO - Analytics ETL initialized. Input: data_vault, Output: analytics
+[2025-12-13T21:54:05.197+0000] {subprocess.py:93} INFO - Creating Dimensions...
+[2025-12-13T21:54:05.197+0000] {subprocess.py:93} INFO - Error writing Delta table dim_well: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.198+0000] {subprocess.py:93} INFO - Saved dim_well as Parquet.
+[2025-12-13T21:54:05.198+0000] {subprocess.py:93} INFO - Error writing Delta table dim_sensor: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.199+0000] {subprocess.py:93} INFO - Saved dim_sensor as Parquet.
+[2025-12-13T21:54:05.200+0000] {subprocess.py:93} INFO - Error writing Delta table dim_survey: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.200+0000] {subprocess.py:93} INFO - Saved dim_survey as Parquet.
+[2025-12-13T21:54:05.200+0000] {subprocess.py:93} INFO - Error writing Delta table dim_strata: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.201+0000] {subprocess.py:93} INFO - Saved dim_strata as Parquet.
+[2025-12-13T21:54:05.201+0000] {subprocess.py:93} INFO - Creating Facts...
+[2025-12-13T21:54:05.202+0000] {subprocess.py:93} INFO - Error writing Delta table fact_sensor_readings: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.202+0000] {subprocess.py:93} INFO - Saved fact_sensor_readings as Parquet.
+[2025-12-13T21:54:05.203+0000] {subprocess.py:93} INFO - Error writing Delta table fact_anomalies: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.203+0000] {subprocess.py:93} INFO - Saved fact_anomalies as Parquet.
+[2025-12-13T21:54:05.204+0000] {subprocess.py:93} INFO - Error writing Delta table fact_survey_events: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.204+0000] {subprocess.py:93} INFO - Saved fact_survey_events as Parquet.
+[2025-12-13T21:54:05.205+0000] {subprocess.py:93} INFO - Creating Data Marts...
+[2025-12-13T21:54:05.205+0000] {subprocess.py:93} INFO - Error writing Delta table mart_well_performance: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.206+0000] {subprocess.py:93} INFO - Saved mart_well_performance as Parquet.
+[2025-12-13T21:54:05.207+0000] {subprocess.py:93} INFO - Error writing Delta table mart_sensor_analysis: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.208+0000] {subprocess.py:93} INFO - Saved mart_sensor_analysis as Parquet.
+[2025-12-13T21:54:05.209+0000] {subprocess.py:93} INFO - Error writing Delta table mart_survey_summary: Expected object with __arrow_c_array__ or __arrow_c_stream__ method. Falling back to Parquet.
+[2025-12-13T21:54:05.209+0000] {subprocess.py:93} INFO - Saved mart_survey_summary as Parquet.
+[2025-12-13T21:54:05.210+0000] {subprocess.py:93} INFO - Analytics ETL Complete.
+[2025-12-13T21:54:05.313+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-13T21:54:05.314+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T21:54:05.352+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=seismic_data_etl, task_id=transform_analytics, execution_date=20251213T215358, start_date=20251213T215403, end_date=20251213T215405
+[2025-12-13T21:54:05.388+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-13T21:54:05.407+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-13T21:54:05.410+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
