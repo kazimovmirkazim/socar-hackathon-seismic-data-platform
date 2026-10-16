@@ -1,6 +1,8 @@
-![cover](images/cover.png)
-
 # Project from DataXKEy: Caspian Basin Data Restoration
+
+![Analytics dashboard](images/dashboard.png)
+
+*Analytics dashboard built from this repository's Data Vault and star-schema outputs: well locations, data quality, amplitude by depth, sensor coverage.*
 
 > **Mission**: End-to-End Restoration & Orchestration of Caspian Basin Data Systems.
 > **Objective**: Transform the legacy of the Caspian Basin from a state of "silent" and corrupted data into a high-performance, real-time intelligence ecosystem.
