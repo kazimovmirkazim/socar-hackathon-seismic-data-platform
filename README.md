@@ -1,3 +1,5 @@
+![cover](images/cover.png)
+
 # Project from DataXKEy: Caspian Basin Data Restoration
 
 > **Mission**: End-to-End Restoration & Orchestration of Caspian Basin Data Systems.
